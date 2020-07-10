@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import regeneratorRuntime from "regenerator-runtime"
 import Image from './Image'
-
+import Voting from './Voting'
 
 export default class Card extends Component {
     constructor () {
@@ -32,6 +32,7 @@ export default class Card extends Component {
         return (
             <div>
             <Image imageUri = {this.state.post}/>
+            <Voting weights = {this.state.post}/>
             </div>
         )
     }
