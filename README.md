@@ -4,23 +4,26 @@ Yup Assesment
 
 ## 🚀 Quick start:
 
-1.  install node modules  
+1.  install node modules (all the dependencies)
 
     ```sh
       npm install
     ```
     
-2. 
+2. Create your Webpack production build by running:
+
     ```sh
       npm run build
     ```
     
+    Run the application server with :
      ```sh
-       npm run start
+       npm start
     ```
     
     
-3. Wunderboard is now running at
+3. You can view the React application on localhost:8080
+
     ```sh
       http://localhost:8080
     ```
@@ -29,5 +32,6 @@ Yup Assesment
 ## 🚀 Built With:
 
 * [Node.js](https://nodejs.org/en/docs/)
+* [React](https://reactjs.org/)
 * [Material UI](https://material-ui.com/)
 * [Webpack](https://webpack.js.org/)
