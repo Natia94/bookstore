@@ -18,11 +18,12 @@ export default class Card extends Component {
     async componentDidMount() {
         const response = await axios.get('https://api.yup.io/posts/post/12294')
         const data = response.data
-        // console.log('data', data)
+        //console.log('data', data)
         this.setState({ 
             post: {
                 img: data.previewData.img ,
-                weights: data.weights
+                weights: data.weights,
+                sextiles: data.sextiles
             }
         }) 
     }
