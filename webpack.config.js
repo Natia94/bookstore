@@ -11,15 +11,15 @@ module.exports = {
             rules: [
                 { test: /\.(js)$/, use: 'babel-loader' },
                 { test: /\.(css)$/, use: ['style-loader', 'css-loader'] },
-                // { test: /\.(jsx)$/, use: 'babel-loader' }
+                { test: /\.(jsx)$/, use: 'babel-loader' }
             ]
         },
     devServer: {
         contentBase: path.join(__dirname, 'app'),
         port: 8080,
-        // proxy: {
-        //     '/': 'http://localhost:3000'
-        // },
+        proxy: {
+            '/': 'http://localhost:3000'
+        },
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -31,6 +31,5 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'app/index.html'
         })
-    ]
-    
+    ]   
 }
