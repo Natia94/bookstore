@@ -28,6 +28,16 @@ Bookstore
       http://localhost:8080
     ```
 
-== 
-PS. /proxy server is not working, for backend just run npm start
-==
+
+PS. 
+1. /proxy server is not working, for backend just 
+        run npm start
+2. for frontend delete "start" command from JSON manifest file and add
+ "start": "webpack-dev-server --open",
+    "nodemon": "nodemon ./server/index.js"
+    
+I NEED TO RUN(BUILD) WEBPACK FIRST AND START THE SERVER
+
+ 
+
+
