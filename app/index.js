@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import './index.css'
+import App from './components/App'
+
+import 'bootstrap/dist/css/bootstrap.css';
 
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>Natia!</h1>
-                
-            </div>
-        )
-    }
-}
+ReactDOM.render(
 
-ReactDOM.render(<App />, document.getElementById('app'))
+<App />, document.getElementById('app')
+);

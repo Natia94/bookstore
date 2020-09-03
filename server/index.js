@@ -9,10 +9,10 @@ const db = require('../db/db')
 
 
 app.get('/allBooks', (req, res, next) => {
-  var sql = "SELECT books.bookName, books.price, authors.name FROM authors JOIN books ON authors.authorID = books.bookId";
+  var sql = "SELECT books.bookName, books.price, authors.authorName FROM authors JOIN books ON authors.authorID = books.bookId";
   db.query (sql, (err, result) => {
     if (err) throw err;
-    //console.log(result);
+    console.log(result);
     res.send('data fetched!')
   })
 })
@@ -34,10 +34,10 @@ app.use("*", (err, req, res, next) => {
   }
 });
 
-const PORT = 8080
+const PORT = 3000
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}
-  goto: http://localhost:8080`);
+  goto: http://localhost:3000`);
 });
   
 
