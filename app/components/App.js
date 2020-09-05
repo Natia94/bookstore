@@ -1,65 +1,38 @@
 import React, {Component} from 'react';
-import Navbar from './Navbar'
+import { Container } from 'reactstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import Appdata from './Appdata'
 import Carousel from './Carousel'
-import Bookcard from './Bookcard'
+import Navbar from './Navbar'
+import BooksByCategories from './BooksByCategories'
 
-import { Row, Col, Container } from 'reactstrap';
 
 class App extends Component {
     constructor(props){
         super (props)
-        this.state = {
-            books : [
-                {
-                    name: "Crime and Punishment1",
-                    author: "Fyodot Dostoevsky1",
-                    description: "lalalallal1"
-                },
-                {
-                    name: "Crime and Punishment2",
-                    author: "Fyodot Dostoevsky2",
-                    description: "lalalallal2"
-                },
-                {
-                    name: "Crime and Punishment3",
-                    author: "Fyodot Dostoevsky3",
-                    description: "lalalallal3"
-                },
-                {
-                    name: "Crime and Punishment1",
-                    author: "Fyodot Dostoevsky1",
-                    description: "lalalallal1"
-                },
-                {
-                    name: "Crime and Punishment2",
-                    author: "Fyodot Dostoevsky2",
-                    description: "lalalallal2"
-                },
-                {
-                    name: "Crime and Punishment3",
-                    author: "Fyodot Dostoevsky3",
-                    description: "lalalallal3"
-                }
-            ]
-        }
     }
+    
     render () {
-        let booksCards = this.state.books.map(book => {
-            return (
-                <Col md = '4'>
-                    <Bookcard books = {book}/>
-                </Col>
-            )
-        })
         return (
-            <Container fluid> 
+            <Router>
+                <Container fluid >
                 <Navbar />
-                <Carousel />
-                <Row>
-                    {booksCards}
-                </Row>
-            </Container>
+                <Switch>
+                    <Route exact path='/' component={Carousel} />
+                    <Route exact path='/getAllbooks' component={Appdata} />
+
+                    <Route exact path='/:science' component={BooksByCategories} />
+                    <Route exact path='/:fiction' component={BooksByCategories} />
+                    <Route exact path='/:romance' component={BooksByCategories} />
+                    <Route exact path='/:novel' component={BooksByCategories} />
+                    <Route exact path='/:narative' component={BooksByCategories} />
+                    <Route exact path='/:mystery' component={BooksByCategories} />
+                    <Route exact path='/:fantasy' component={BooksByCategories} />
+
+                </Switch> 
+                </Container>
+            </Router>
         )
     }
 }

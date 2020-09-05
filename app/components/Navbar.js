@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -11,7 +12,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  NavbarText,
+  Form,
+  Label,
+  Input
 } from 'reactstrap';
 
 const Navigation = (props) => {
@@ -27,31 +31,36 @@ const Navigation = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="#">All Books</NavLink>
+              <NavLink tag={Link} to ="/getAllbooks">All Books</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Science</NavLink>
+              <NavLink tag={Link} to ="/science">Science</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Fiction</NavLink>
+              <NavLink tag={Link} to ="/fiction">Fiction</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Romance</NavLink>
+              <NavLink tag={Link} to="/romance'">Romance</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Novel</NavLink>
+              <NavLink tag={Link} to="/novel">Novel</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Narative</NavLink>
+              <NavLink tag={Link} to="narative">Narative</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Mystery</NavLink>
+              <NavLink tag={Link} to="mystery">Mystery</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Fantasy</NavLink>
+              <NavLink tag={Link} to="fantasy">Fantasy</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Shoping cart</NavbarText>
+          <Form>
+            <Label>
+              <Input type="email" placeholder="Search" />
+            </Label>
+          </Form>
+          <NavbarText>Shopping Cart</NavbarText>
         </Collapse>
       </Navbar>
     </div>
