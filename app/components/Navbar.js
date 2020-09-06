@@ -18,6 +18,9 @@ import {
   Input
 } from 'reactstrap';
 
+import {FaShoppingCart, FaUserAlt} from 'react-icons/fa'
+
+
 const Navigation = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,21 +49,27 @@ const Navigation = (props) => {
               <NavLink tag={Link} to="/novel">Novel</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="narative">Narative</NavLink>
+              <NavLink tag={Link} to="/narative">Narative</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="mystery">Mystery</NavLink>
+              <NavLink tag={Link} to="/mystery">Mystery</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="fantasy">Fantasy</NavLink>
+              <NavLink tag={Link} to="/fantasy">Fantasy</NavLink>
             </NavItem>
+
+            <Form>
+              <Label>
+                <Input type="email" placeholder="Search" /> 
+              </Label>
+            </Form>
+            <NavLink tag={Link} to="/"> Shoping Cart <FaShoppingCart/></NavLink>
+
+            <NavLink tag={Link} to="/UserAccount"> User <FaUserAlt/></NavLink>
+        
           </Nav>
-          <Form>
-            <Label>
-              <Input type="email" placeholder="Search" />
-            </Label>
-          </Form>
-          <NavbarText>Shopping Cart</NavbarText>
+          
+           
         </Collapse>
       </Navbar>
     </div>
